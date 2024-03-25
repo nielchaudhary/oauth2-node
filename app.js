@@ -17,9 +17,19 @@ app.get('/auth/google',passport.authenticate('google',{scope:['profile', 'email'
 
 
 
+app.get('/auth/google/callback',
+    passport.authenticate('google', {
+        successRedirect : '/protected',
+        failureRedirect : '/auth/failure'
+    })
+
+)
+
 app.get('/auth/failure', (req,res)=>{
     res.send("Something went wrong")
 })
+
+
 
 
 
