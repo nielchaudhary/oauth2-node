@@ -4,6 +4,10 @@ const app = express()
 
 const passport = require('passport')
 
+const session = require('express-session')
+
+app.use(session({secret : 'cats'}))
+
 require('./auth.js')
 
 
