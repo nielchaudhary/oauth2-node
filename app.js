@@ -25,6 +25,11 @@ app.get('/auth/google/callback',
 
 )
 
+app.get('/protected',isLoggedin, (req,res)=>{
+    res.send(`Hello ${req.user.displayName}`)
+})
+
+
 app.get('/auth/failure', (req,res)=>{
     res.send("Something went wrong")
 })
