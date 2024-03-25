@@ -8,6 +8,11 @@ require('./auth.js')
 
 
 
+function isLoggedin(req,res,next){
+    req.user? next() : res.sendStatus(401)
+}
+
+
 
 app.get('/', (req,res)=>{
     res.send('<a href="/auth/google">Authenticate</a>')
