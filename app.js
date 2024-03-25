@@ -7,6 +7,8 @@ const passport = require('passport')
 const session = require('express-session')
 
 app.use(session({secret : 'cats'}))
+app.use(passport.initialize())
+
 
 require('./auth.js')
 
