@@ -45,7 +45,11 @@ app.get('/auth/failure', (req,res)=>{
 
 
 
-
+app.get('/logout',(req,res)=>{
+    req.logout(()=>{})
+    req.session.destroy()
+    res.send("Logged Out")
+})
 
 
 app.listen(3000,()=>{
